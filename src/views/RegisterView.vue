@@ -1,5 +1,6 @@
 <template>
   <div class="mainDiv">
+     <div><img class="center" src="../assets/userIcon.png" /></div>
     <div class="container">
       <v-form ref="form">
         <div class="form-group">
@@ -80,7 +81,7 @@
             >Şifreler uyuşmaktadır</small
           >
         </div>
-        <div class="form-group">
+        <div class="form-group" style="float:right">
           <button type="submit" class="btn btn-success" @click="signUp">
             Gönder
           </button>
@@ -161,12 +162,19 @@ export default {
 </script>
 
 <style>
+.center {
+  display: block;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15%;
+}
 .mainDiv {
   margin-left: auto;
   margin-right: auto;
   background-color: lightblue;
   width: 400px;
-  height: 540px;
+  height: 600px;
 }
 .form-group {
   margin-top: 20px;
