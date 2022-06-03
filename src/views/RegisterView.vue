@@ -1,7 +1,7 @@
 <template>
   <div class="mainDiv">
     <div class="container">
-      <v-form @submit.prevent="signUp" ref="form">
+      <v-form ref="form">
         <div class="form-group">
           <label>Kullanıcı Adı</label>
           <input
@@ -81,8 +81,16 @@
           >
         </div>
         <div class="form-group">
-          <vbtn class="btn btn-success">Gönder</vbtn>
-          <vbtn class="btn btn-danger" style="margin-left: 10px">Temizle</vbtn>
+          <button type="submit" class="btn btn-success" @click="signUp">
+            Gönder
+          </button>
+          <button
+            class="btn btn-danger"
+            style="margin-left: 10px"
+            @click="signUpClear"
+          >
+            Temizle
+          </button>
         </div>
       </v-form>
     </div>
@@ -101,7 +109,7 @@ export default {
   components: { passwordMeter },
   data() {
     return {
-      elementGizleme: true,
+      //elementGizleme: true,
       kullaniciAdi: "",
       eMail: "",
       sifre: "",
@@ -142,7 +150,11 @@ export default {
       return _kullaniciAdi, _eMail, _sifre, sifreOnayla;
     },
     signUpClear: function () {
-      this.$refs.form.reset();
+      this.kullaniciAdi = "";
+      this.eMail = "";
+      this.sifre = "";
+      this.sifreTekrar = "";
+      // this.$refs.form.reset();
     },
   },
 };
